@@ -1,13 +1,16 @@
 # zakkmg.com
 
-Zakk M.G.'s own site: one drafting sheet with six equal "details" (Music, Art,
-Games, Words, Free tools, Elsewhere) and a title block in the corner. A violet
-blueprint at night and violet ink on drafting vellum by day; it follows each
-visitor's light/dark setting. Every word is in ZakkMG Hand, and the **Aa** button
-switches to plain fonts (the browser remembers the choice).
+Zakk M.G.'s home base, "The Central Hub": news, politics and society, dev and
+artist logs, and the projects and games, on four tabs. It's drawn as a drafting
+sheet: a violet blueprint at night and violet ink on drafting vellum by day (it
+follows each visitor's light/dark setting), with a title block in the corner.
+Your handwriting (ZakkMG Hand) sets the name, headings and titles; the posts
+themselves are in a plain, easy-to-read face; dates, tags and the `//` marks are
+monospace, for the terminal feel. The **Aa** button switches the handwriting to
+plain fonts too, and the browser remembers the choice.
 
 Plain files. No build step, no framework, no server code, no cookies, no trackers.
-The studio, the games and the free tools live on pheasantcouch.com; this sheet
+The studio, the games and the free tools live on pheasantcouch.com; the hub
 points to them.
 
 ```
@@ -17,10 +20,12 @@ zakkmg-site/
 ├── serve.bat          Windows: double-click to preview at http://localhost:8080
 ├── serve.sh / serve.py   Mac/Linux preview, and the server both use
 └── site/              ← THE WEBSITE
-    ├── index.html     the sheet. Every word on the site is in here.
+    ├── posts.js       ← EVERY POST and the Projects & Games cards. Edit this.
+    ├── index.html     the frame: header, tabs, sidebar, footer
     ├── 404.html       "Not on this sheet." for addresses that don't exist
     ├── css/style.css  colors and fonts at the top, layout below
     ├── js/site.js     the Aa button
+    ├── js/hub.js      fills in the posts and runs the tabs (no need to edit)
     ├── favicon.svg, robots.txt, sitemap.xml
     └── assets/
         ├── fonts/     ZakkMG Hand + the plain set (Schibsted Grotesk, Martian Mono), with licenses
@@ -29,22 +34,42 @@ zakkmg-site/
 
 ---
 
-## Editing
+## Writing a post
 
-Open `site/index.html` in Notepad (or anything). Each detail is a `<section class="detail">`
-with a comment above it (`<!-- 01 MUSIC -->` and so on).
+Open `site/posts.js` in Notepad. The note at the top explains every line, and
+there's a block to copy at the bottom of the list.
+
+1. Copy the example block, paste it at the **top** of the list (newest first).
+2. Set `section` to `"news"`, `"politics"` or `"blog"`. That's the tab it shows under.
+3. Give it a `slug`: its own address. `"my-new-post"` becomes
+   zakkmg.com/#my-new-post, a link you can share that opens straight to it.
+4. Write the words between the two backticks. A blank line starts a new
+   paragraph; `*word*` is italics. Use ’ instead of a backtick.
+5. Save, and commit it to GitHub. It's live in about a minute.
+
+`quote` puts a pull quote in a box after the text; `tags` are the little labels
+under it. Leave them `""` and `[]` to skip them.
+
+**Tab addresses:** zakkmg.com/#news, /#politics, /#blog and /#projects each open
+that tab, handy for linking from Threads or Reddit.
+
+## Projects & Games
+
+The cards on that tab are `PROJECTS` at the bottom of `posts.js`: a name, a
+status note, a sentence, a link and the button's words. They stay put; they
+aren't posts.
+
+## Everything else
 
 | To… | Do this |
 | --- | --- |
-| Add a link to a detail | copy one `<li>…</li>` line in its `links` list and change the address and words. `<small>` after the link is the little grey note. |
-| Change a detail's words | the `<h2>` is the heading, `class="sub"` the line under it, the `<p>` the paragraph |
-| Add a seventh detail | copy a whole `<section class="detail">…</section>`, give it a new `id`, number and heading, and add it to the top-bar menu and the `index` list in the hero. Six or nine fill the grid evenly. |
-| Change the line under the name | `one guy, many drafts` in the hero |
-| Change the tip link | the `tip` paragraph in Elsewhere |
-| Update the title block | the `<footer class="titleblock">`. Bump **Rev** (A → B → C) when you change the sheet, like a real drawing. |
+| Change the line under the name | `Automaton Drafting // Technomancy // Stupent Yokes` appears twice in `index.html` (the wide-screen version and the phone version): change both |
+| Change the sidebar links | the Gateways and Signals lists in `index.html`: copy an `<li>` line |
+| Change the System status lines | the `status` list in `index.html` |
+| Update the title block | the `<footer class="titleblock">`. Bump **Rev** (B → C) when you change the site, like a real drawing. |
 | Change the colors | the two `:root` blocks at the top of `css/style.css`: the first is day (vellum), the second is night (blueprint). `--violet` is the electric violet. |
 
-After editing, also change `lastmod` in `site/sitemap.xml` to today's date so
+After a change, also set `lastmod` in `site/sitemap.xml` to today's date so
 search engines know to look again.
 
 ## Previewing on your PC

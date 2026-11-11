@@ -1,22 +1,22 @@
 <!doctype html>
 <!--
   ZakkMG.com: the homepage.
-  Every word on the site is in this file. Each "detail" below is one section of the sheet;
-  copy a <li> to add a link, delete one to remove it. README.md has the rest.
+  The posts and the project cards live in posts.js (open it in Notepad; the note at the top
+  walks through it). This file holds the frame: the header, the tabs, the sidebar, the footer.
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Zakk M.G.</title>
-  <meta name="description" content="Zakk M.G. makes songs, drawings, games and the free tools behind them. Home of Zakk M.G.’s Automaton Drafting Band and Pheasant Couch Productions.">
+  <title>ZakkMG.com // The Central Hub</title>
+  <meta name="description" content="Zakk M.G.’s home base: news, politics and society, worldbuilding and dev logs, and the games and music behind Pheasant Couch Productions and the Automaton Drafting Band.">
   <link rel="canonical" href="https://zakkmg.com/">
   <meta name="theme-color" content="#140a2b" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#f3f0fb" media="(prefers-color-scheme: light)">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Zakk M.G.">
-  <meta property="og:title" content="Zakk M.G.">
-  <meta property="og:description" content="Songs, drawings, games and free tools, all drafted by hand.">
+  <meta property="og:site_name" content="ZakkMG.com">
+  <meta property="og:title" content="ZakkMG.com // The Central Hub">
+  <meta property="og:description" content="Automaton Drafting // Technomancy // Stupent Yokes">
   <meta property="og:url" content="https://zakkmg.com/">
   <meta property="og:image" content="https://zakkmg.com/assets/og/og-zakkmg.jpg">
   <meta property="og:image:width" content="1200">
@@ -27,6 +27,8 @@
   <link rel="preload" href="assets/fonts/zakkmg-hand.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/site.js"></script>
+  <script src="posts.js" defer></script>
+  <script src="js/hub.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,140 +46,101 @@
   </script>
 </head>
 <body>
-<a class="skip" href="#sheet">Skip to content</a>
+<a class="skip" href="#feed">Skip to the posts</a>
 
 <div class="sheet-frame">
 
   <header class="topbar">
-    <a class="mark" href="/" aria-label="Zakk M.G., home"><span aria-hidden="true">Z</span></a>
-    <nav aria-label="Sections">
-      <ul>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#art">Art</a></li>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#words">Words</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#elsewhere">Elsewhere</a></li>
-      </ul>
-    </nav>
+    <a class="mark" href="/" aria-label="ZakkMG.com, home"><span aria-hidden="true">Z</span></a>
+    <span class="topbar-title">ZakkMG.com</span>
     <button class="font-switch" type="button" aria-pressed="false" title="Switch between handwriting and a plain font">
       <span aria-hidden="true">Aa</span><span class="sr">Plain font</span>
     </button>
   </header>
 
-  <main id="sheet">
+  <!-- THE HEADLINE -->
+  <section class="hero hero-compact" aria-labelledby="name">
+    <p class="annot annot-top">the central hub · sheet 1 of 1</p>
+    <h1 id="name">
+      <span class="name-line">Zakk M.G.</span>
+      <span class="dim" aria-hidden="true"><span class="dim-label">Automaton Drafting // Technomancy // Stupent Yokes</span></span>
+    </h1>
+    <p class="tagline">Automaton Drafting // Technomancy // Stupent Yokes</p>
+  </section>
 
-    <!-- THE HEADLINE -->
-    <section class="hero" aria-labelledby="name">
-      <p class="annot annot-top">sheet 1 of 1 · not to scale</p>
-      <h1 id="name">
-        <span class="name-line">Zakk M.G.</span>
-        <span class="dim" aria-hidden="true"><span class="dim-label">one guy, many drafts</span></span>
-      </h1>
-      <p class="lede">makes songs, drawings, games, and the free tools behind them. Here’s the whole sheet.</p>
-      <ol class="index" aria-label="What’s on this sheet">
-        <li><a href="#music"><b>01</b> Music</a></li>
-        <li><a href="#art"><b>02</b> Art</a></li>
-        <li><a href="#games"><b>03</b> Games</a></li>
-        <li><a href="#words"><b>04</b> Words</a></li>
-        <li><a href="#tools"><b>05</b> Free tools</a></li>
-        <li><a href="#elsewhere"><b>06</b> Elsewhere</a></li>
-      </ol>
-    </section>
+  <!-- THE TABS. Each href is the tab's address: zakkmg.com/#politics opens that tab. -->
+  <nav class="tabs" aria-label="Sections">
+    <a href="#news" data-tab="news"><b>01</b> News</a>
+    <a href="#politics" data-tab="politics"><b>02</b> Politics &amp; Society</a>
+    <a href="#blog" data-tab="blog"><b>03</b> Blog Logs</a>
+    <a href="#projects" data-tab="projects"><b>04</b> Projects &amp; Games</a>
+  </nav>
 
-    <!-- THE SIX DETAILS. Same size on purpose: none of them is the main thing. -->
-    <div class="details">
+  <div class="hub">
 
-      <!-- 01 MUSIC -->
-      <section class="detail" id="music" aria-labelledby="music-h">
-        <p class="callout" aria-hidden="true"><span>01</span></p>
-        <h2 id="music-h">Music</h2>
-        <p class="sub">Zakk M.G.’s Automaton Drafting Band</p>
-        <p>Two albums so far. <em>Behold</em> holds the olde songs; <em>Behold: the Present!</em> is the modern set.</p>
-        <ul class="links">
-          <li><a href="https://open.spotify.com/artist/72TR6QnQMdMLGcuAD3hWJf" rel="me">Listen on Spotify</a></li>
-          <li><a href="https://music.youtube.com/@zakkmg5213" rel="me">Listen on YouTube Music</a></li>
-          <li><a href="https://pheasantcouch.com/lyrics">Read the lyrics</a></li>
+    <main id="feed" class="feed" tabindex="-1">
+      <!-- Each tab's heading is here; the posts fill in from posts.js. -->
+      <section class="tab-panel" id="tab-news" data-panel="news" aria-labelledby="h-news">
+        <h2 id="h-news" class="panel-h"><span>//</span> Latest transmissions</h2>
+        <div class="posts" data-posts="news"></div>
+      </section>
+      <section class="tab-panel" id="tab-politics" data-panel="politics" aria-labelledby="h-politics">
+        <h2 id="h-politics" class="panel-h"><span>//</span> Politics &amp; social critique</h2>
+        <div class="posts" data-posts="politics"></div>
+      </section>
+      <section class="tab-panel" id="tab-blog" data-panel="blog" aria-labelledby="h-blog">
+        <h2 id="h-blog" class="panel-h"><span>//</span> Developer &amp; artist logs</h2>
+        <div class="posts" data-posts="blog"></div>
+      </section>
+      <section class="tab-panel" id="tab-projects" data-panel="projects" aria-labelledby="h-projects">
+        <h2 id="h-projects" class="panel-h"><span>//</span> Projects &amp; interactives</h2>
+        <div class="projects" data-projects></div>
+      </section>
+      <noscript><p class="empty">The posts need JavaScript switched on to show.</p></noscript>
+    </main>
+
+    <aside class="side" aria-label="Elsewhere">
+      <section class="side-box">
+        <h2 class="side-h"><span>//</span> Gateways</h2>
+        <ul class="gates">
+          <li><a href="https://pheasantcouch.com/">Pheasant Couch Productions<small>the studio, its games and free tools</small></a></li>
+          <li><a href="https://pheasantcouch.com/pew-pew-pest-control">Pew Pew Pest Control<small>the 3D kitchen shooter</small></a></li>
+          <li><a href="https://open.spotify.com/artist/72TR6QnQMdMLGcuAD3hWJf" rel="me">Automaton Drafting Band<small>on Spotify</small></a></li>
+          <li><a href="https://music.youtube.com/@zakkmg5213" rel="me">Automaton Drafting Band<small>on YouTube Music</small></a></li>
         </ul>
       </section>
-
-      <!-- 02 ART -->
-      <section class="detail" id="art" aria-labelledby="art-h">
-        <p class="callout" aria-hidden="true"><span>02</span></p>
-        <h2 id="art-h">Art</h2>
-        <p class="sub">Drawings</p>
-        <p>Creatures, moons, astronauts, the odd beetle. Including Izing Remina, the astronaut whose eye is a black hole.</p>
-        <ul class="links">
-          <li><a href="https://pheasantcouch.com/art">See the drawings</a></li>
+      <section class="side-box">
+        <h2 class="side-h"><span>//</span> Signals</h2>
+        <ul class="gates gates-small">
+          <li><a href="https://www.threads.com/@zakkmg" rel="me">Threads<small>@zakkmg</small></a></li>
+          <li><a href="https://www.reddit.com/user/zaktsk/" rel="me">Reddit<small>u/zaktsk</small></a></li>
+          <li><a href="https://cash.app/$z54993">Tip on Cash App<small>$z54993</small></a></li>
         </ul>
       </section>
-
-      <!-- 03 GAMES -->
-      <section class="detail" id="games" aria-labelledby="games-h">
-        <p class="callout" aria-hidden="true"><span>03</span></p>
-        <h2 id="games-h">Games</h2>
-        <p class="sub">Made as Pheasant Couch Productions</p>
-        <p>A studio that takes ridiculous ideas very seriously.</p>
-        <ul class="links">
-          <li><a href="https://pheasantcouch.com/pew-pew-pest-control">Pew Pew Pest Control</a> <small>in production</small></li>
-          <li><a href="https://pheasantcouch.com/syntax-zero">Syntax: Zero</a> <small>free word game, play now</small></li>
-          <li><a href="https://pheasantcouch.com/">The studio</a></li>
-        </ul>
+      <section class="side-box">
+        <h2 class="side-h"><span>//</span> System status</h2>
+        <dl class="status">
+          <div><dt>Status</dt><dd>Active &amp; responsive</dd></div>
+          <div><dt>Vibe</dt><dd>Dark electric violet</dd></div>
+          <div><dt>Drawn by</dt><dd>Zakk M.G.</dd></div>
+        </dl>
       </section>
+    </aside>
 
-      <!-- 04 WORDS -->
-      <section class="detail" id="words" aria-labelledby="words-h">
-        <p class="callout" aria-hidden="true"><span>04</span></p>
-        <h2 id="words-h">Words</h2>
-        <p class="sub">Stories and song lyrics</p>
-        <p>The stories, and every word of both albums, written out in my handwriting.</p>
-        <ul class="links">
-          <li><a href="https://pheasantcouch.com/stories">Read the stories</a></li>
-          <li><a href="https://pheasantcouch.com/lyrics">Read the lyrics</a></li>
-        </ul>
-      </section>
-
-      <!-- 05 FREE TOOLS -->
-      <section class="detail" id="tools" aria-labelledby="tools-h">
-        <p class="callout" aria-hidden="true"><span>05</span></p>
-        <h2 id="tools-h">Free tools</h2>
-        <p class="sub">Made for my own work, handed out</p>
-        <p>No sign-ups. The audio tools run in your browser and nothing gets uploaded.</p>
-        <ul class="links">
-          <li><a href="https://pheasantcouch.com/zakkmg-hand">ZakkMG Hand</a> <small>this handwriting, as a font</small></li>
-          <li><a href="https://pheasantcouch.com/voice-modulator">Voice modulator</a></li>
-          <li><a href="https://pheasantcouch.com/vocal-tuner">Vocal tuner</a></li>
-          <li><a href="https://pheasantcouch.com/music-visualizer">Music visualizer</a></li>
-        </ul>
-      </section>
-
-      <!-- 06 ELSEWHERE -->
-      <section class="detail" id="elsewhere" aria-labelledby="elsewhere-h">
-        <p class="callout" aria-hidden="true"><span>06</span></p>
-        <h2 id="elsewhere-h">Elsewhere</h2>
-        <p class="sub">Where else to find me</p>
-        <ul class="links">
-          <li><a href="https://www.threads.com/@zakkmg" rel="me">Threads</a> <small>@zakkmg</small></li>
-          <li><a href="https://www.reddit.com/user/zaktsk/" rel="me">Reddit</a> <small>u/zaktsk</small></li>
-          <li><a href="https://pheasantcouch.com/">Pheasant Couch</a> <small>the studio</small></li>
-        </ul>
-        <p class="tip">Like something here? <a href="https://cash.app/$z54993">Tip on Cash App</a> <small>$z54993</small></p>
-      </section>
-
-    </div>
-  </main>
+  </div>
 
   <!-- THE TITLE BLOCK: bottom corner of every engineering drawing -->
-  <footer class="titleblock" aria-label="About this sheet">
+  <footer class="titleblock" aria-label="About this site">
     <dl>
-      <div class="tb-title"><dt>Title</dt><dd>Zakk M.G., General Arrangement</dd></div>
+      <div class="tb-title"><dt>Title</dt><dd>ZakkMG.com, the Central Hub</dd></div>
       <div><dt>Drawn by</dt><dd>Zakk M.G.</dd></div>
       <div><dt>Sheet</dt><dd>1 of 1</dd></div>
       <div><dt>Scale</dt><dd>NTS</dd></div>
-      <div><dt>Rev</dt><dd>A</dd></div>
+      <div><dt>Rev</dt><dd>B</dd></div>
       <div><dt>Date</dt><dd>Nov 2026</dd></div>
     </dl>
-    <p class="copy">© 2026 Zakk M.G. · set in ZakkMG Hand · this site keeps no cookies and runs no trackers</p>
+    <p class="copy">© 2026 Zakk M.G. // Powered by pragmatic realism and electric violet shadows.<br>
+      <small>Not affiliated with Zakk Wylde (disclaimer active). No cookies, no trackers.</small></p>
   </footer>
 
 </div>
