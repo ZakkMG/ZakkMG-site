@@ -1,0 +1,13 @@
+// Cloudflare reads this file when it publishes the site from GitHub.
+// "name" must match the Worker's name in the Cloudflare dashboard.
+{
+  "name": "zakkmg-site",
+  "compatibility_date": "2026-09-01",
+
+  // The site's files. Cloudflare serves them as they are. No server code.
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
