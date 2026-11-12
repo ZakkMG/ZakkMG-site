@@ -1,0 +1,8 @@
+Courier 10 Pitch
+Copyright (c) Bitstream Inc. Contributed by Bitstream to the X Consortium.
+
+Distributed with the X Window System under the X11 license, which permits
+use, copying, modification and redistribution. These .woff files are a
+straight format conversion (Type 1 to WOFF/CFF) of the regular, italic and
+bold faces as shipped in X.Org's Type1 font set (c0419bt_, c0582bt_, c0583bt_);
+the letterforms are unchanged.

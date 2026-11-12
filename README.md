@@ -1,13 +1,11 @@
 # zakkmg.com
 
 Zakk M.G.'s home base, "The Central Hub": news, politics and society, dev and
-artist logs, and the projects and games, on four tabs. It's drawn as a drafting
-sheet: a violet blueprint at night and violet ink on drafting vellum by day (it
-follows each visitor's light/dark setting), with a title block in the corner.
-Your handwriting (ZakkMG Hand) sets the name, headings and titles; the posts
-themselves are in a plain, easy-to-read face; dates, tags and the `//` marks are
-monospace, for the terminal feel. The **Aa** button switches the handwriting to
-plain fonts too, and the browser remembers the choice.
+artist logs, and the projects and games, on four tabs. It's a writer's terminal: a dark screen glowing electric violet, where each post
+is a typed draft (in Courier 10 Pitch, an old IBM typewriter face) with its own
+filename, and your handwriting (ZakkMG Hand) is the ink on top: your name, the
+post titles and the scribbled pull quotes. The **Aa** button switches both the
+handwriting and the typewriter to a plain font, and the browser remembers the choice.
 
 Plain files. No build step, no framework, no server code, no cookies, no trackers.
 The studio, the games and the free tools live on pheasantcouch.com; the hub
@@ -28,7 +26,7 @@ zakkmg-site/
     ├── js/hub.js      fills in the posts and runs the tabs (no need to edit)
     ├── favicon.svg, robots.txt, sitemap.xml
     └── assets/
-        ├── fonts/     ZakkMG Hand + the plain set (Schibsted Grotesk, Martian Mono), with licenses
+        ├── fonts/     ZakkMG Hand, Courier 10 Pitch (typewriter), Schibsted Grotesk (for Aa), with licenses
         └── og/og-zakkmg.jpg   the picture shown when someone shares the link
 ```
 
@@ -63,11 +61,11 @@ aren't posts.
 
 | To… | Do this |
 | --- | --- |
-| Change the line under the name | `Automaton Drafting // Technomancy // Stupent Yokes` appears twice in `index.html` (the wide-screen version and the phone version): change both |
+| Change the line under the name | `Automaton Drafting // Technomancy // Stupent Yokes` in the hero of `index.html` |
 | Change the sidebar links | the Gateways and Signals lists in `index.html`: copy an `<li>` line |
 | Change the System status lines | the `status` list in `index.html` |
-| Update the title block | the `<footer class="titleblock">`. Bump **Rev** (B → C) when you change the site, like a real drawing. |
-| Change the colors | the two `:root` blocks at the top of `css/style.css`: the first is day (vellum), the second is night (blueprint). `--violet` is the electric violet. |
+| Change the colors | the `:root` block at the top of `css/style.css`. `--violet` is the electric violet, `--bg` the screen, `--panel` the cards. |
+| Change the footer | the `<footer class="foot">` at the bottom of `index.html` (the Zakk Wylde line lives there) |
 
 After a change, also set `lastmod` in `site/sitemap.xml` to today's date so
 search engines know to look again.

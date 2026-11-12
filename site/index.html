@@ -11,8 +11,8 @@
   <title>ZakkMG.com // The Central Hub</title>
   <meta name="description" content="Zakk M.G.’s home base: news, politics and society, worldbuilding and dev logs, and the games and music behind Pheasant Couch Productions and the Automaton Drafting Band.">
   <link rel="canonical" href="https://zakkmg.com/">
-  <meta name="theme-color" content="#140a2b" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#f3f0fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#07060a">
+  <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ZakkMG.com">
   <meta property="og:title" content="ZakkMG.com // The Central Hub">
@@ -21,7 +21,7 @@
   <meta property="og:image" content="https://zakkmg.com/assets/og/og-zakkmg.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Zakk M.G., handwritten on a violet blueprint sheet.">
+  <meta property="og:image:alt" content="Zakk M.G., handwritten in glowing violet on a dark terminal.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/zakkmg-hand.woff2" as="font" type="font/woff2" crossorigin>
@@ -48,24 +48,21 @@
 <body>
 <a class="skip" href="#feed">Skip to the posts</a>
 
-<div class="sheet-frame">
+<div class="term">
 
-  <header class="topbar">
-    <a class="mark" href="/" aria-label="ZakkMG.com, home"><span aria-hidden="true">Z</span></a>
-    <span class="topbar-title">ZakkMG.com</span>
-    <button class="font-switch" type="button" aria-pressed="false" title="Switch between handwriting and a plain font">
+  <header class="term-bar">
+    <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="term-title">zakkmg@central-hub: ~/drafts</span>
+    <button class="font-switch" type="button" aria-pressed="false" title="Switch the handwriting and typewriter to a plain font">
       <span aria-hidden="true">Aa</span><span class="sr">Plain font</span>
     </button>
   </header>
 
   <!-- THE HEADLINE -->
-  <section class="hero hero-compact" aria-labelledby="name">
-    <p class="annot annot-top">the central hub · sheet 1 of 1</p>
-    <h1 id="name">
-      <span class="name-line">Zakk M.G.</span>
-      <span class="dim" aria-hidden="true"><span class="dim-label">Automaton Drafting // Technomancy // Stupent Yokes</span></span>
-    </h1>
-    <p class="tagline">Automaton Drafting // Technomancy // Stupent Yokes</p>
+  <section class="hero" aria-labelledby="name">
+    <p class="prompt" aria-hidden="true"><span class="ps1">zakkmg@central-hub:~$</span> whoami</p>
+    <h1 id="name" class="name">Zakk M.G.</h1>
+    <p class="tagline">Automaton Drafting // Technomancy // Stupent Yokes<span class="caret" aria-hidden="true"></span></p>
   </section>
 
   <!-- THE TABS. Each href is the tab's address: zakkmg.com/#politics opens that tab. -->
@@ -80,19 +77,19 @@
 
     <main id="feed" class="feed" tabindex="-1">
       <!-- Each tab's heading is here; the posts fill in from posts.js. -->
-      <section class="tab-panel" id="tab-news" data-panel="news" aria-labelledby="h-news">
+      <section class="tab-panel card" id="tab-news" data-panel="news" aria-labelledby="h-news">
         <h2 id="h-news" class="panel-h"><span>//</span> Latest transmissions</h2>
         <div class="posts" data-posts="news"></div>
       </section>
-      <section class="tab-panel" id="tab-politics" data-panel="politics" aria-labelledby="h-politics">
+      <section class="tab-panel card" id="tab-politics" data-panel="politics" aria-labelledby="h-politics">
         <h2 id="h-politics" class="panel-h"><span>//</span> Politics &amp; social critique</h2>
         <div class="posts" data-posts="politics"></div>
       </section>
-      <section class="tab-panel" id="tab-blog" data-panel="blog" aria-labelledby="h-blog">
+      <section class="tab-panel card" id="tab-blog" data-panel="blog" aria-labelledby="h-blog">
         <h2 id="h-blog" class="panel-h"><span>//</span> Developer &amp; artist logs</h2>
         <div class="posts" data-posts="blog"></div>
       </section>
-      <section class="tab-panel" id="tab-projects" data-panel="projects" aria-labelledby="h-projects">
+      <section class="tab-panel card" id="tab-projects" data-panel="projects" aria-labelledby="h-projects">
         <h2 id="h-projects" class="panel-h"><span>//</span> Projects &amp; interactives</h2>
         <div class="projects" data-projects></div>
       </section>
@@ -100,7 +97,7 @@
     </main>
 
     <aside class="side" aria-label="Elsewhere">
-      <section class="side-box">
+      <section class="side-box card">
         <h2 class="side-h"><span>//</span> Gateways</h2>
         <ul class="gates">
           <li><a href="https://pheasantcouch.com/">Pheasant Couch Productions<small>the studio, its games and free tools</small></a></li>
@@ -109,7 +106,7 @@
           <li><a href="https://music.youtube.com/@zakkmg5213" rel="me">Automaton Drafting Band<small>on YouTube Music</small></a></li>
         </ul>
       </section>
-      <section class="side-box">
+      <section class="side-box card">
         <h2 class="side-h"><span>//</span> Signals</h2>
         <ul class="gates gates-small">
           <li><a href="https://www.threads.com/@zakkmg" rel="me">Threads<small>@zakkmg</small></a></li>
@@ -117,30 +114,21 @@
           <li><a href="https://cash.app/$z54993">Tip on Cash App<small>$z54993</small></a></li>
         </ul>
       </section>
-      <section class="side-box">
+      <section class="side-box card">
         <h2 class="side-h"><span>//</span> System status</h2>
         <dl class="status">
-          <div><dt>Status</dt><dd>Active &amp; responsive</dd></div>
+          <div><dt>Status</dt><dd class="ok">Active &amp; responsive</dd></div>
           <div><dt>Vibe</dt><dd>Dark electric violet</dd></div>
-          <div><dt>Drawn by</dt><dd>Zakk M.G.</dd></div>
+          <div><dt>Drafted by</dt><dd>Zakk M.G.</dd></div>
         </dl>
       </section>
     </aside>
 
   </div>
 
-  <!-- THE TITLE BLOCK: bottom corner of every engineering drawing -->
-  <footer class="titleblock" aria-label="About this site">
-    <dl>
-      <div class="tb-title"><dt>Title</dt><dd>ZakkMG.com, the Central Hub</dd></div>
-      <div><dt>Drawn by</dt><dd>Zakk M.G.</dd></div>
-      <div><dt>Sheet</dt><dd>1 of 1</dd></div>
-      <div><dt>Scale</dt><dd>NTS</dd></div>
-      <div><dt>Rev</dt><dd>B</dd></div>
-      <div><dt>Date</dt><dd>Nov 2026</dd></div>
-    </dl>
-    <p class="copy">© 2026 Zakk M.G. // Powered by pragmatic realism and electric violet shadows.<br>
-      <small>Not affiliated with Zakk Wylde (disclaimer active). No cookies, no trackers.</small></p>
+  <footer class="foot">
+    <p>&copy; 2026 Zakk M.G. // Powered by pragmatic realism and electric violet shadows.</p>
+    <p>Not affiliated with Zakk Wylde (disclaimer active) · no cookies, no trackers</p>
   </footer>
 
 </div>

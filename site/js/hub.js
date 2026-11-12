@@ -35,23 +35,29 @@
       var a = el("article", "post");
       a.id = p.slug;
       bySlug[p.slug] = t;
-      var head = el("p", "post-when");
-      head.appendChild(document.createTextNode(p.when || ""));
-      var link = el("a", "post-link", "#");
-      link.href = "#" + p.slug;
-      link.setAttribute("aria-label", "Link to this post");
-      head.appendChild(link);
+      // header: the draft's filename (also its link) and its date line
+      var head = el("p", "post-head");
+      var file = el("a", "post-file", p.slug + ".txt");
+      file.href = "#" + p.slug;
+      file.title = "Link to this post";
+      head.appendChild(file);
+      if (p.when) head.appendChild(el("span", "post-when", "· " + p.when));
       a.appendChild(head);
       a.appendChild(el("h3", "post-title", p.title));
       var body = el("div", "post-body");
       addBody(body, p.body);
       a.appendChild(body);
       if (p.quote) a.appendChild(el("blockquote", "post-quote", "“" + p.quote + "”"));
+      var foot = el("div", "post-foot");
       if (p.tags && p.tags.length) {
         var tags = el("ul", "post-tags");
         p.tags.forEach(function (tg) { tags.appendChild(el("li", null, tg)); });
-        a.appendChild(tags);
+        foot.appendChild(tags);
       }
+      var eof = el("span", "eof", "-- EOF --");
+      eof.setAttribute("aria-hidden", "true");
+      foot.appendChild(eof);
+      a.appendChild(foot);
       box.appendChild(a);
     });
   });
