@@ -67,6 +67,11 @@ aren't posts.
 | Change the colors | the `:root` block at the top of `css/style.css`. `--violet` is the electric violet, `--bg` the screen, `--panel` the cards. |
 | Change the footer | the `<footer class="foot">` at the bottom of `index.html` (the Zakk Wylde line lives there) |
 
+**Seeing an old version?** Browsers keep the site's files for up to 10 minutes.
+Press Ctrl + Shift + R to load fresh. When you change `css/style.css` or the
+scripts, bump the `?v=3` after their names in `index.html` and `404.html`
+(to `?v=4`, and so on) so every visitor gets the new files at once.
+
 After a change, also set `lastmod` in `site/sitemap.xml` to today's date so
 search engines know to look again.
 
